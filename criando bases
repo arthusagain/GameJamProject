@@ -1,0 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Controller : MonoBehaviour
+{
+    public GameObject opBase;
+
+	void Start ()
+    {
+        SpawnBases();
+	}
+    void SpawnBases()
+    {
+        int i = 0;
+        Quaternion spawnRotation = Quaternion.identity;
+        Vector2[] spawnPos = new Vector2[6];
+        spawnPos[0] = new Vector2(-6,-2);
+        spawnPos[1] = new Vector2(-7, 1);
+        spawnPos[2] = new Vector2( 5, 3);
+        spawnPos[3] = new Vector2( 2, 2);
+        spawnPos[4] = new Vector2(-3, 0);
+        spawnPos[5] = new Vector2(7, -3);
+        for (i = 0; i < 6; i++)
+        {
+            Instantiate(opBase, spawnPos[i], spawnRotation);
+        }
+    }
+}
